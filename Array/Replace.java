@@ -6,27 +6,33 @@ public class Replace{
 		int n = sc.nextInt();
 		int a[] = new int[n];
 		Array a1 = new Array();
-		a1.Scan(a);
+		a1.scan(a);
+		a1.replace(a);
 	}
 }
 
 class Array{
+	int n;
 	Scanner sc = new Scanner(System.in);
-	
-	void Scan(int a[])
-	{
+
+	void scan(int a[]){
 		for(int i=0;i<a.length;i++){
-			System.out.println("enter array elements");
+			System.out.println("Enter array element : "+ i);
 			a[i] = sc.nextInt();
 		}
+	}
+
+	void replace(int a[]){
+		System.out.println("enter number 1 :  ");
 		int n1 = sc.nextInt();
+		System.out.println("enter number 2 :  ");
 		int n2 = sc.nextInt();
 
 		for(int i=0;i<a.length;i++){
 			if(n1==a[i]){
-				a[i]=n2;
-				System.out.println(a[i],i);
+				a[i] = n2;
 			}
+			System.out.println("replaced :  " + a[i] + "  Index is :  "+i);
 		}
 	}
 }

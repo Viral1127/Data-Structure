@@ -25,11 +25,17 @@ class Minimum{
 	}
 	void getMin(int a[])
 	{
+		int count = 0;
 		int min=a[0];
 		for(int i=0;i<a.length;i++){
 			if(min > a[i]){
 			min = a[i];
+			count=1;
 			}
+			if(count==1){
+				System.out.println("position is :  " + i);
+			}
+			
 		}
 	
 		System.out.println(min);		
