@@ -1,6 +1,6 @@
 public class Recognize{
 	public static void main(String args[]){
-		String v = "c_";
+		String v = "aabbcbbaa_";
 		int i=0;
 		char c = v.charAt(i);
 		StackOperation s1 = new StackOperation(v.length());

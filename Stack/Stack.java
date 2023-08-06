@@ -76,7 +76,7 @@ class StackOperation{
 
 	void peep(){
 		if(top==0){
-			System.out.println("stack underflow");
+			System.out.println("stack is empty");
 		}
 		else{
 			System.out.println(Stack[top]);
