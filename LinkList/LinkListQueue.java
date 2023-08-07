@@ -1,5 +1,6 @@
 import java.util.Scanner;
 class Node{
+
 	int data;
 	Node next;
 
@@ -8,23 +9,27 @@ class Node{
 	}
 }
 
-class Stack{
+class Queue{
 	Node head;
 
-	void push(int value){
-		Node n = new Node(value);
-		n.next = head;
-		head = n;
+	void insertQueue(int y){
+		Node n = new Node(y);
+
+		if(head==null){
+			head = n;
+		}
+		else{
+		Node temp = head;
+		while(temp.next!=null){
+			temp=temp.next;
+		}
+		temp.next=n;
+		}
 	}
 
-	void pop(){
+	void deleteQueue(){
 		Node temp = head;
 		head = temp.next;
-	}
-
-	void peep(){
-		Node temp = head;
-		System.out.println(temp.data);
 	}
 
 	void display(){
@@ -37,29 +42,27 @@ class Stack{
 	}
 }
 
-public class LinkListStack{
-	public static void main(String[] args){
-		Stack s = new Stack();
+public class LinkListQueue{
+	public static void main(String[] args) {
+		
+		Queue q = new Queue();
 		Scanner sc = new Scanner(System.in);
 
         while(true){
-            System.out.println("enter choice :  \n 1 for push\n 2 for pop\n 3 for peep\n 4 for display \n 5 for exit");
+            System.out.println("enter choice :  \n 1 for insert\n 2 for delete\n 3 for display \n 4 for exit ");
             int choice = sc.nextInt();
             switch (choice){
                 case 1 : System.out.println("Enter element");
                             int x = sc.nextInt();
-                            s.push(x);
+                            q.insertQueue(x);
                             break;
-                case 2 : s.pop();
-                            break;
-
-                case 3 : s.peep();
+                case 2 : q.deleteQueue();
                             break;
 
-                case 4 : s.display();
-                			break;
+                case 3 : q.display();
+                            break;
 
-                case 5 : return;			
+                case 4 : return;
           	}
         }
 	}
