@@ -50,6 +50,12 @@ class LinkList{
 	}
 
 	void deleteFirst(){
+
+		if (head == null) {
+        System.out.println("List is empty. Cannot delete.");
+        return;
+    }
+
 		Node temp = head;
 		head = temp.next;
 	}
