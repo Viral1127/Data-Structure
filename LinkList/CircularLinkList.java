@@ -98,11 +98,32 @@ public class CircularLinkList{
 
 		CLinkList c = new CLinkList();
 
-		c.insertFirst(10);
-		c.insertFirst(20);
-		c.insertFirst(30);
-		c.display();
-		//c.delete(1);
-		//c.display();
+		Scanner sc = new Scanner(System.in);
+
+        while(true){
+            System.out.println("enter choice :  \n 1 for insertFirst\n 2 for delete\n 3 for display \n 4 for insertLast \n 5 for exit ");
+            int choice = sc.nextInt();
+            switch (choice){
+                case 1 : System.out.println("Enter element");
+                            int x = sc.nextInt();
+                            c.insertFirst(x);
+                            break;
+                case 2 : System.out.println
+                	("Enter position where u want to insert");
+                			int v = sc.nextInt();
+                			c.delete(v);
+                            break;
+
+                case 3 : c.display();
+                            break;
+                
+                case 4 : System.out.println("Enter element");
+                            int y = sc.nextInt();
+                            c.insertEnd(y);
+                            break;
+
+                case 5 : return;
+          	}
+        }
 	}
 }
