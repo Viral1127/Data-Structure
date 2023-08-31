@@ -48,7 +48,7 @@ class Bts{
 		}
 	}
 
-	    void delete(int value) {
+	void delete(int value) {
         root = deleteNode(root, value);
     }
 
@@ -120,13 +120,13 @@ class Bts{
 		}
 	}
 
-	// void treeStructure(Node root, String prefix, boolean isLeft) {
-    //     if (root != null) {
-    //         System.out.println(prefix + (isLeft ? "|--" : " |- ") + root.value);
-    //         treeStructure(root.left, prefix + (isLeft ? "│   " : "    "), true);
-    //         treeStructure(root.right, prefix + (isLeft ? "│   " : "    "), false);
-    //     }
-    // }
+	void treeStructure(Node root, String prefix, boolean isLeft) {
+        if (root != null) {
+            System.out.println(prefix + (isLeft ? "|--" : " |- ") + root.value);
+            treeStructure(root.left, prefix + (isLeft ? "│   " : "    "), true);
+            treeStructure(root.right, prefix + (isLeft ? "│   " : "    "), false);
+        }
+    }
 }
 
 public class Tree{
@@ -142,7 +142,7 @@ public class Tree{
                 case 1 : System.out.println("Enter element");
                             int x = sc.nextInt();
                             b1.insert(x);
-                            // b1.treeStructure(b1.root, "", false);
+                            b1.treeStructure(b1.root, "", false);
                             break;
                 case 2 : b1.preOrder(b1.root);
                 			break;
